@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "check-format": "prettier --list-different 'resources/**/*.{css,js,vue}'",
+    "format": "prettier --write 'resources/js/**/*.{css,js,vue}'",
+    "lint": "eslint resources/js --fix --ext js,vue"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-vue": "^4.4.0",
+    "laravel-mix": "^6.0",
+    "prettier": "^2.0.5",
+    "resolve-url-loader": "^5.0.0",
+    "vue-loader": "^16.2.0",
+    "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "autosize": "^4.0.2",
+    "vue": "^3.0"
+  }
+}
