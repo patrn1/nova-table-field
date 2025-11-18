@@ -1,4 +1,5 @@
 <template>
+<div :class="{ 'no-label': field.removeLabel }">
   <DefaultField
     :field="currentField"
     :errors="errors"
@@ -56,6 +57,7 @@
       <div v-if="field.helpText" class="help-text help-text mt-2" v-html="field.helpText"></div>
     </template>
   </DefaultField>
+</div>
 </template>
 
 <script>
@@ -243,3 +245,12 @@ export default {
   },
 };
 </script>
+<style>
+.no-label > div > div:first-child {
+  display: none !important;
+}
+.no-label > div > div:nth-child(2) {
+  width: 100% !important;
+  padding-right: 46px !important;
+}
+</style>

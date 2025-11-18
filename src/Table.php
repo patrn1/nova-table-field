@@ -47,6 +47,11 @@ class Table extends Field
         return $this->withMeta(['minRows' => $min]);
     }
 
+    public function removeLabel(): static
+    {
+        return $this->withMeta(['removeLabel' => true]);
+    }
+
     /**
      * The maximum number of rows in the table.
      *
