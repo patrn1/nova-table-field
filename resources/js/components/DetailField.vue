@@ -1,13 +1,15 @@
 <template>
-  <PanelItem :index="index" :field="field">
-    <template #value>
-      <Table :edit-mode="false" class="overflow-hidden" v-if="theData.length > 0">
-        <div class="bg-white overflow-hidden">
-          <TableRow :disabled="true" :key="index" :row="row" v-for="(row, index) in theData" />
-        </div>
-      </Table>
-    </template>
-  </PanelItem>
+  <div :class="{ 'no-label': field.removeLabel }">
+    <PanelItem :index="index" :field="field">
+      <template #value>
+        <Table :edit-mode="false" class="overflow-hidden" v-if="theData.length > 0">
+          <div class="bg-white overflow-hidden">
+            <TableRow :disabled="true" :key="index" :row="row" v-for="(row, index) in theData" />
+          </div>
+        </Table>
+      </template>
+    </PanelItem>
+  </div>
 </template>
 
 <script>
@@ -29,3 +31,13 @@ export default {
   },
 };
 </script>
+<style>
+.no-label > div > div:first-child {
+  display: none !important;
+}
+.no-label > div > div:nth-child(2) {
+  width: 100% !important;
+  padding-right: 46px !important;
+}
+</style>
+
